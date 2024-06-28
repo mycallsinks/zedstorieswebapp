@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Define the web application with the Jakarta EE schema -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!-- Display name of the web application -->
+    <display-name>ZedStories</display-name>
+
+    <!-- Define the welcome files for the application -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+    </welcome-file-list>
+
+    <!-- Define the MakePostServlet -->
+    <servlet>
+        <servlet-name>MakePostServlet</servlet-name>
+        <servlet-class>com.michaelsinkamba.servlets.MakePostServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MakePostServlet</servlet-name>
+        <url-pattern>/MakePostServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Define the AdminServlet -->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.michaelsinkamba.servlets.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/AdminServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Define the EditPostServlet -->
+    <servlet>
+        <servlet-name>EditPostServlet</servlet-name>
+        <servlet-class>com.michaelsinkamba.servlets.EditPostServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditPostServlet</servlet-name>
+        <url-pattern>/EditPostServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Define the ConfessionServlet -->
+    <servlet>
+        <servlet-name>ConfessionServlet</servlet-name>
+        <servlet-class>com.michaelsinkamba.servlets.ConfessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfessionServlet</servlet-name>
+        <url-pattern>/ConfessionServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Define the LifestyleServlet -->
+    <servlet>
+        <servlet-name>LifestyleServlet</servlet-name>
+        <servlet-class>com.michaelsinkamba.servlets.LifestyleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LifestyleServlet</servlet-name>
+        <url-pattern>/LifestyleServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Define the PartnerServlet -->
+    <servlet>
+        <servlet-name>PartnerServlet</servlet-name>
+        <servlet-class>com.michaelsinkamba.servlets.PartnerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PartnerServlet</servlet-name>
+        <url-pattern>/PartnerServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>

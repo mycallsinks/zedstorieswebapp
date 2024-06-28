@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Confessions</title>
+    <style>
+        /* Your CSS styling here */
+    </style>
+</head>
+<body>
+    <h1>Confessions</h1>
+    <c:forEach var="post" items="${confessions}">
+        <div class="post">
+            <h2>${post.title}</h2>
+            <p><strong>Author:</strong> ${post.author}</p>
+            <p><strong>Location:</strong> ${post.location}</p>
+            <p>${post.text}</p>
+            <c:if test="${not empty post.image}">
+                <img src="uploads/${post.image}" alt="Post Image">
+            </c:if>
+            <p><strong>Contact Details:</strong> ${post.contactDetails}</p>
+            <p><strong>Date:</strong> ${post.date}</p>
+        </div>
+    </c:forEach>
+
+
+
+
+    <!-- scenarios -->
+
+
+    <!-- Show Only One Post: -->
+    <c:forEach var="post" items="${confessions}" varStatus="status">
+        <c:if test="${status.index == 0}">
+            <div class="post">
+                <h2>${post.title}</h2>
+                <p><strong>Author:</strong> ${post.author}</p>
+                <p><strong>Location:</strong> ${post.location}</p>
+                <p>${post.text}</p>
+                <c:if test="${not empty post.image}">
+                    <img src="uploads/${post.image}" alt="Post Image">
+                </c:if>
+                <p><strong>Contact Details:</strong> ${post.contactDetails}</p>
+                <p><strong>Date:</strong> ${post.date}</p>
+            </div>
+        </c:if>
+        <c:if test="${status.index == 0}">
+            <c:set var="breakLoop" value="true"/>
+        </c:if>
+        <c:if test="${breakLoop}">
+            <c:break/>
+        </c:if>
+    </c:forEach>
+
+    
+    <!-- Show Only Three Posts: -->
+
+    <c:forEach var="post" items="${confessions}" varStatus="status">
+        <c:if test="${status.index < 3}">
+            <div class="post">
+                <h2>${post.title}</h2>
+                <p><strong>Author:</strong> ${post.author}</p>
+                <p><strong>Location:</strong> ${post.location}</p>
+                <p>${post.text}</p>
+                <c:if test="${not empty post.image}">
+                    <img src="uploads/${post.image}" alt="Post Image">
+                </c:if>
+                <p><strong>Contact Details:</strong> ${post.contactDetails}</p>
+                <p><strong>Date:</strong> ${post.date}</p>
+            </div>
+        </c:if>
+        <c:if test="${status.index == 2}">
+            <c:set var="breakLoop" value="true"/>
+        </c:if>
+        <c:if test="${breakLoop}">
+            <c:break/>
+        </c:if>
+    </c:forEach>
+
+    
+    <!-- Show Only Two Posts -->
+
+    <c:forEach var="post" items="${confessions}" varStatus="status">
+    <c:if test="${status.index < 2}">
+        <div class="post">
+            <h2>${post.title}</h2>
+            <p><strong>Author:</strong> ${post.author}</p>
+            <p><strong>Location:</strong> ${post.location}</p>
+            <p>${post.text}</p>
+            <c:if test="${not empty post.image}">
+                <img src="uploads/${post.image}" alt="Post Image">
+            </c:if>
+            <p><strong>Contact Details:</strong> ${post.contactDetails}</p>
+            <p><strong>Date:</strong> ${post.date}</p>
+        </div>
+    </c:if>
+    <c:if test="${status.index == 1}">
+        <c:set var="breakLoop" value="true"/>
+    </c:if>
+    <c:if test="${breakLoop}">
+        <c:break/>
+    </c:if>
+</c:forEach>
+
+
+</body>
+</html>

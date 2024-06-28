@@ -1,0 +1,35 @@
+
+header {
+    position: fixed !important; /* Initially relative */
+    z-index: 1000;
+    width: 100%;
+    max-width: 1045px;
+    margin: 0 auto;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .fixed {
+    position: fixed; /* After scrolling, fixed position */
+    top: 0;
+    left: 0;
+  }
+  
+  /* for all sections */
+  
+  .card {
+    transition: all .2s ease-out;
+    transform: translateY(15%);
+    opacity: 0;
+  }
+  .card:nth-of-type(even) {
+    transform: translateY(5%);
+  }
+  
+  .card.animate {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .body_holder{
+    padding-top: 60px !important;
+  }

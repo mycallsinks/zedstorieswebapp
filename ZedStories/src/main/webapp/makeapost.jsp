@@ -1,0 +1,421 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zed Stories Homepage</title>
+    <!-- boostrap css link -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/makeapost.css">
+
+    <!-- fonts icons start-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://kit.fontawesome.com/018d9ba538.js" crossorigin="anonymous"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        $('#category').change(function () {
+            var category = $(this).val();
+            $('.category-form').hide();
+            $('#' + category + '-form').show();
+        });
+    });
+
+</script>
+</head>
+
+<body class="bg-body-tertiary">
+    
+
+    <div class="zed_sotories_holder mb-2">
+        <header class="header_holder">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-md bg-body-tertiary">
+                <div class="container-fluid pe-2 ps-2">
+                    <a class="navbar-brand logo_name" href="#">
+                        <span class="logo_surname initial_logo_name">Zed</span><span
+                            class="logo_surname text-primary">Stories</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse navbar_lists" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./conffessions.html">Confessions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./lifestyle.html">Lifestyle</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./partner.html">Partner</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./makeapost.html">Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./counsel.html">Counsel </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./about.html">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="body_holder">
+            <!-- home section  landing page-->
+            <div class="container-fluid text-center mb-2 body_sections landing_page card ">
+                <div class="row d-flex mb-2 ">
+                    <!-- home landing page poster -->
+                    <!-- home landing page poster -->
+                    <div class="col-12 main_home_poster  text-bg-dark p-0 poster mb-2 mb-md-0 orther_pages_landing">
+                        <div class=" text-bg-dark  ">
+
+                            <img src="./images/lover.jpg" class="card-img img-fluid" alt="...">
+                            <div class="card-img-overlay testing ">
+                                <h5 class="card-title text-center">MAKE ANONYMOUS POST</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- aside home landing page -->
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-12 add_bg">
+                        <marquee behavior="" direction="">
+                            <!-- Advertise your businesses 0974286888 -->
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second home section -->
+
+            <!-- about from here -->
+            <div class="row killer ">
+                <div class="col-12 col-md-8 px-0 mb-3 posting_cate">
+                    <div class="d-flex p-2 main_color text-white mb-2 section_tittles">Create a Post zedStories</div>
+                    <div class="accordion border card p-2" id="accordionExample">
+                        <!-- inserting new div here -->
+                        <form action="makepost" method="post" enctype="multipart/form-data">
+                            <div class="category_selecting">
+                                <label for="category">Select Category:</label>
+                                <select id="category" name="category">
+                                    <option value="">--Select Category--</option>
+                                    <option value="confessions">Confessions</option>
+                                    <option value="partner">Partner</option>
+                                    <option value="lifestyle">Lifestyle</option>
+                                </select>
+                            </div>
+
+                            <div class="catergories">
+                                <!-- Confessions Form -->
+                                <div id="confessions-form" class="category-form " style="display:block;">
+                                    <h2 class="category_tittle">Confess About Something</h2>
+                                    <div>
+                                        <label for="confessions-title">Title:</label>
+                                        <input type="text" id="confessions-title" name="confessions-title">
+                                    </div>
+                                    <div>
+                                        <label for="confessions-author">Nickname:</label>
+                                        <input type="text" id="confessions-author" name="confessions-author">
+                                    </div>
+                                    <div>
+                                        <label for="confessions-location">Posting from:</label>
+                                        <input type="text" id="confessions-location" name="confessions-location">
+                                    </div>
+                                    <div>
+                                        <label for="confessions-text">Confession Text:</label>
+                                        <textarea id="confessions-text" name="confessions-text"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Partner Form -->
+                                <div id="partner-form" class="category-form " style="display:none;">
+                                    <h2 class="category_tittle">Find a Partner</h2>
+                                    <div>
+                                        <label for="partner-title">Looking for?:</label>
+                                        <input type="text" id="partner-title" name="partner-title">
+                                    </div>
+                                    <div>
+                                        <label for="partner-author">Nickname(or names):</label>
+                                        <input type="text" id="partner-author" name="partner-author">
+                                    </div>
+                                    <div>
+                                        <label for="partner-location">Where youre based:</label>
+                                        <input type="text" id="partner-location" name="partner-location">
+                                    </div>
+                                    <div>
+                                        <label for="partner-text">Description:</label>
+                                        <textarea id="partner-text" name="partner-text"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="partner-contact-details">Contact Details:</label>
+                                        <input type="text" id="partner-contact-details" name="partner-contact-details">
+                                    </div>
+                                    
+<div>
+        <label for="partner-image">Your Image (optional):</label>
+        <input type="file" id="partner-image" name="partner-image">
+    </div>
+                                    
+                                </div>
+
+                                <!-- Lifestyle Form -->
+                                <div id="lifestyle-form" class="category-form" style="display:none;">
+                                    <h2 class="category_tittle">Tell us a Lifestyle Story</h2>
+                                    <div>
+                                        <label for="lifestyle-title">Title:</label>
+                                        <input type="text" id="lifestyle-title" name="lifestyle-title">
+                                    </div>
+                                    <div>
+                                        <label for="lifestyle-author">Nicnkame/Names:</label>
+                                        <input type="text" id="lifestyle-author" name="lifestyle-author">
+                                    </div>
+                                    <div>
+                                        <label for="lifestyle-location">Location:</label>
+                                        <input type="text" id="lifestyle-location" name="lifestyle-location">
+                                    </div>
+                                    <div>
+                                        <label for="lifestyle-text">Lifestyle Story Text:</label>
+                                        <textarea id="lifestyle-text" name="lifestyle-text"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="lifestyle-image">Image:(optional)</label>
+                                        <input type="file" id="lifestyle-image" name="lifestyle-image">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <button type="submit">Submit</button>
+                                </div>
+
+                            </div>
+                            <!-- inserting ends -->
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-4 advertisements">
+                    <div class="container-fluid text-center m-0 p-0 ps-md-1">
+                        <div class="row">
+                            <div class="col-12 mb-1 section_tittles">
+                                Adverts
+                            </div>
+                            <div class="col-12  add_poster card p-0">
+                                <!-- col-14 -->
+
+                                <!-- <div class="card"> -->
+                                <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="./images/one.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="./images/two.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="./images/one.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+
+
+                                <div class="card-body p-0">
+                                    <p class="card-text">Some quick example text to build on the card title and make
+                                        up the bulk of the card's content.</p>
+                                    <p class="card-text add_links">
+                                        <a href="#">link one</a>
+                                        <a href="#">link two</a>
+                                        <a href="#">link three</a>
+                                    </p>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- about from here -->
+        </section>
+    </div>
+    <!-- footer -->
+    <footer class="footer body_sections">
+
+        <div class="footer_wrapper">
+            <div class="first">
+                <div class="logo">
+                    <h1 class="doc_logo">
+                        <!-- Dr.<span id="special">Fiero</span> -->
+                        <a class="navbar-brand logo_name" href="#">
+                            <span class="logo_surname initial_logo_name">Zed</span><span
+                                class="logo_surname text-primary">Stories</span>
+                        </a>
+                    </h1>
+                    <p>Anonymously write confessions, find a partner, and encourage someone about life.</p>
+                </div>
+
+                <div class="have_questions">
+                    <h3>Have Questions?</h3>
+                    <ul>
+
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            +260 974286888
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/message/WSQ463DN4ZDRK1" target="_blank">Whatsapp </a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i>
+                            <a href="https://www.michaelsinkamba.com">michaelsinkamba.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <div class="second">
+                <div class="links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li>
+                            <a href="./index.html">
+                                <i class="fa-solid fa-arrow-right">
+                                </i> Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./about.html"><i class="fa-solid fa-arrow-right"></i>About
+                            </a>
+                        <li>
+                            <a href="./conffessions.html"><i class="fa-solid fa-arrow-right"></i>Confessions
+                            </a>
+                        <li>
+                            <a href="./lifestyle.html"><i class="fa-solid fa-arrow-right"></i>Lifestyle
+                            </a>
+                        <li>
+                            <a href="./findapartner.html"><i class="fa-solid fa-arrow-right"></i>Partner
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./counsel.html"><i class="fa-solid fa-arrow-right"></i>Counsel
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./about.html"><i class="fa-solid fa-arrow-right"></i>About
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="fourth">
+                <div class="sumary_services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-right"></i>Get Help
+                            </a>
+                            <p>
+                                Anonymously get advice from experienced Counsellor on relationships, lifestyle, and
+                                managing life's challenges.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-right"></i>Advertise
+                            </a>
+                            <p>
+                                Advertise with ZedStories
+
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subscribe">
+                    <form action="#" method="post">
+                        <input type="email" name="email" id="email" placeholder="Enter email address">
+                        <button>Subscribe for notifications</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="all_rights">
+
+            <p class="desktop_view">
+                Copyright ©2024 All rights reserved
+            <p id="tab_break">
+                | This template is developed By |
+            <p class="phone_break">
+                Fiero Technologies
+            </p>
+            </p>
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- email js -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- external js sheet -->
+    <script src="./js/conffesionsScript.js"></script>
+    <script src="./js/lifefestylescript.js"></script>
+    <script src="./js/partnerscript.js"></script>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/animate.js"></script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Place the JSTL <c:if> tag outside the script tag -->
+<c:if test="${not empty successMessage}">
+    <script>
+        alert('${successMessage}');
+    </script>
+</c:if>
+    
+</body>
+
+</html>

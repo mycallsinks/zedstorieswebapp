@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zed Stories Homepage</title>
+    <!-- boostrap css link -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animations.css">
+
+    <!-- fonts icons start-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://kit.fontawesome.com/018d9ba538.js" crossorigin="anonymous"></script>
+</head>
+    
+<script>
+    $(document).ready(function() {
+        $('#category').change(function() {
+            var category = $(this).val();
+            $('.category-form').hide();
+            $('#' + category + '-form').show();
+        });
+    });
+</script>
+</head>
+<body>
+
+    
+    <h1>Make a Post</h1>
+    <form action="makepost" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="category">Select Category:</label>
+            <select id="category" name="category">
+                <option value="">--Select Category--</option>
+                <option value="confessions">Confessions</option>
+                <option value="partner">Partner</option>
+                <option value="lifestyle">Lifestyle</option>
+            </select>
+        </div>
+
+       <!-- Confessions Form -->
+<div id="confessions-form" class="category-form" style="display:none;">
+    <h2>Confessions</h2>
+    <div>
+        <label for="confessions-title">Title:</label>
+        <input type="text" id="confessions-title" name="confessions-title">
+    </div>
+    <div>
+        <label for="confessions-author">Author:</label>
+        <input type="text" id="confessions-author" name="confessions-author">
+    </div>
+    <div>
+        <label for="confessions-location">Location:</label>
+        <input type="text" id="confessions-location" name="confessions-location">
+    </div>
+    <div>
+        <label for="confessions-text">Text:</label>
+        <textarea id="confessions-text" name="confessions-text"></textarea>
+    </div>
+</div>
+
+<!-- Partner Form -->
+<div id="partner-form" class="category-form" style="display:none;">
+    <h2>Partner</h2>
+    <div>
+        <label for="partner-title">Title:</label>
+        <input type="text" id="partner-title" name="partner-title">
+    </div>
+    <div>
+        <label for="partner-author">Author:</label>
+        <input type="text" id="partner-author" name="partner-author">
+    </div>
+    <div>
+        <label for="partner-location">Location:</label>
+        <input type="text" id="partner-location" name="partner-location">
+    </div>
+    <div>
+        <label for="partner-text">Text:</label>
+        <textarea id="partner-text" name="partner-text"></textarea>
+    </div>
+    <div>
+        <label for="partner-contact-details">Contact Details:</label>
+        <input type="text" id="partner-contact-details" name="partner-contact-details">
+    </div>
+</div>
+
+<!-- Lifestyle Form -->
+<div id="lifestyle-form" class="category-form" style="display:none;">
+    <h2>Lifestyle</h2>
+    <div>
+        <label for="lifestyle-title">Title:</label>
+        <input type="text" id="lifestyle-title" name="lifestyle-title">
+    </div>
+    <div>
+        <label for="lifestyle-author">Author:</label>
+        <input type="text" id="lifestyle-author" name="lifestyle-author">
+    </div>
+    <div>
+        <label for="lifestyle-location">Location:</label>
+        <input type="text" id="lifestyle-location" name="lifestyle-location">
+    </div>
+    <div>
+        <label for="lifestyle-text">Text:</label>
+        <textarea id="lifestyle-text" name="lifestyle-text"></textarea>
+    </div>
+    <div>
+        <label for="lifestyle-image">Image:</label>
+        <input type="file" id="lifestyle-image" name="lifestyle-image">
+    </div>
+</div>
+
+<div>
+    <button type="submit">Submit</button>
+</div>
+       
+
+          <!-- Bootstrap JS Bundle with Popper -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- external js sheet -->
+    <script src="./js/script.js"></script>
+    <script src="./js/animate.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+<!-- end -->
+</body>
+
+</html>

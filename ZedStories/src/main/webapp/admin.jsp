@@ -1,0 +1,403 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zed Stories Homepage</title>
+    <!-- boostrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/admin.css">
+
+    <!-- fonts icons start-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://kit.fontawesome.com/018d9ba538.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-body-tertiary">
+    <div class="zed_sotories_holder">
+        <header class="header_holder">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-md bg-body-tertiary">
+                <div class="container-fluid pe-2 ps-2">
+                    <a class="navbar-brand logo_name" href="#">
+                        <span class="logo_surname initial_logo_name">Zed</span><span
+                            class="logo_surname text-primary">Stories</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse navbar_lists" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./conffessions.html">Confessions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./lifestyle.html">Lifestyle</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./partner.html">Partner</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./makeapost.html">Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./counsel.html">Counsel </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./about.html">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <section class="body_holder">
+            <!-- admin panel section -->
+
+            <div class="container mt-4">
+                
+                <h1 class="text-center">  
+                    <a class="navbar-brand logo_name" href="#">
+                        <span class="logo_surname initial_logo_name">Zed</span><span
+                            class="logo_surname text-primary">Stories</span>
+                    </a>
+
+                    <a class="navbar-brand logo_name" href="#">
+                        <span class="logo_surname initial_logo_name">Admin</span><span
+                            class="logo_surname text-primary">Panel</span>
+                    </a>
+                </h1>
+
+                <h2>Confessions</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Location</th>
+                                <th>Text</th>
+                                <th>Image</th>
+                                <th>Contact Details</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="post" items="${confessions}">
+                                <tr class="table_rows">
+                                    <td>${post.id}</td>
+                                    <td>${post.title}</td>
+                                    <td>${post.author}</td>
+                                    <td>${post.location}</td>
+                                    <td>${post.text}</td>
+                                    <td>${post.image}</td>
+                                    <td>${post.contactDetails}</td>
+                                    <td>${post.status}</td>
+                                    <td class="actions">
+                                        <!-- Open edit modal on button click -->
+                                        <button class="btn btn-primary btn-sm"
+                                            onclick="openModal('${post.id}', '${post.category}', '${post.title}', '${post.author}', '${post.location}', '${post.text}', '${post.image}', '${post.contactDetails}')">Edit</button>
+                                        <form action="admin" method="post" style="display: inline;">
+                                            <input type="hidden" name="postId" value="${post.id}">
+                                            <button type="submit" name="action" value="approve"
+                                                class="btn btn-success btn-sm">Approve</button>
+                                            <button type="submit" name="action" value="delete"
+                                                class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h2>Partners</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Location</th>
+                                <th>Text</th>
+                                <th>Image</th>
+                                <th>Contact Details</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="post" items="${partners}">
+                                <tr class="table_rows">
+                                    <td>${post.id}</td>
+                                    <td>${post.title}</td>
+                                    <td>${post.author}
+                                    </td>
+                                    <td>${post.location}</td>
+                                    <td>${post.text}</td>
+                                    <td>${post.image}</td>
+                                    <td>${post.contactDetails}</td>
+                                    <td>${post.status}</td>
+                                    <td class="actions">
+                                        <!-- Open edit modal on button click -->
+                                        <button class="btn btn-primary btn-sm"
+                                            onclick="openModal('${post.id}','${post.category}', '${post.title}', '${post.author}', '${post.location}', '${post.text}', '${post.image}', '${post.contactDetails}')">Edit</button>
+                                        <form action="admin" method="post" style="display: inline;">
+                                            <input type="hidden" name="postId" value="${post.id}">
+                                            <button type="submit" name="action" value="approve"
+                                                class="btn btn-success btn-sm">Approve</button>
+                                            <button type="submit" name="action" value="delete"
+                                                class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h2>Lifestyle</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Location</th>
+                                <th>Text</th>
+                                <th>Image</th>
+                                <th>Contact Details</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="post" items="${lifestyles}">
+                                <tr class="table_rows">
+                                    <td>${post.id}</td>
+                                    <td>${post.title}</td>
+                                    <td>${post.author}</td>
+                                    <td>${post.location}</td>
+                                    <td>${post.text}</td>
+                                    <td>${post.image}</td>
+                                    <td>${post.contactDetails}</td>
+                                    <td>${post.status}</td>
+                                    <td class="actions">
+                                        <!-- Open edit modal on button click -->
+                                        <button class="btn btn-primary btn-sm"
+                                            onclick="openModal('${post.id}','${post.category}', '${post.title}', '${post.author}', '${post.location}', '${post.text}', '${post.image}', '${post.contactDetails}')">Edit</button>
+                                        <form action="admin" method="post" style="display: inline;">
+                                            <input type="hidden" name="postId" value="${post.id}">
+                                            <button type="submit" name="action" value="approve"
+                                                class="btn btn-success btn-sm">Approve</button>
+                                            <button type="submit" name="action" value="delete"
+                                                class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+            <!-- Modal for editing post -->
+            <div id="editModal" class="modal">
+                <div class="modal-content card">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2 class="text-center">Edit Post</h2>
+
+                    <form id="editForm" enctype="multipart/form-data">
+                        <input type="hidden" id="editPostId" name="postId">
+
+                        <input type="hidden" id="editCategory" name="category" required>
+                        <label for="editTitle">Title:</label>
+                        <input type="text" id="editTitle" name="title" required>
+
+                        <label for="editAuthor">Author:</label>
+                        <input type="text" id="editAuthor" name="author" required>
+
+                        <label for="editLocation">Location:</label>
+                        <input type="text" id="editLocation" name="location" required>
+
+                        <label for="editText">Text:</label>
+                        <textarea id="editText" name="text" rows="4" required></textarea>
+
+                        <label for="editImage">Image:</label>
+                        <input type="file" id="editImage" name="image">
+
+                        <label for="editContactDetails">Contact Details:</label>
+                        <input type="text" id="editContactDetails" name="contactDetails">
+
+                        <input type="button" value="Save Changes" onclick="saveChanges()" class="saveBTN">
+                    </form>
+
+                </div>
+            </div>
+            <!-- admin panel end -->
+        </section>
+    </div>
+    <!-- footer -->
+    <!-- footer -->
+    <footer class="footer body_sections">
+
+        <div class="footer_wrapper">
+            <div class="first">
+                <div class="logo">
+                    <h1 class="doc_logo">
+                        <!-- Dr.<span id="special">Fiero</span> -->
+                        <a class="navbar-brand logo_name" href="#">
+                            <span class="logo_surname initial_logo_name">Zed</span><span
+                                class="logo_surname text-primary">Stories</span>
+                        </a>
+                    </h1>
+                    <p>Anonymously write confessions, find a partner, and encourage someone about life.</p>
+                </div>
+
+                <div class="have_questions">
+                    <h3>Have Questions?</h3>
+                    <ul>
+
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            +260 974286888
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/message/WSQ463DN4ZDRK1" target="_blank">Whatsapp </a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i>
+                            <a href="https://www.michaelsinkamba.com">michaelsinkamba.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <div class="second">
+                <div class="links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li>
+                            <a href="./index.html">
+                                <i class="fa-solid fa-arrow-right">
+                                </i> Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./about.html"><i class="fa-solid fa-arrow-right"></i>About
+                            </a>
+                        <li>
+                            <a href="./conffessions.html"><i class="fa-solid fa-arrow-right"></i>Confessions
+                            </a>
+                        <li>
+                            <a href="./lifestyle.html"><i class="fa-solid fa-arrow-right"></i>Lifestyle
+                            </a>
+                        <li>
+                            <a href="./findapartner.html"><i class="fa-solid fa-arrow-right"></i>Partner
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./counsel.html"><i class="fa-solid fa-arrow-right"></i>Counsel
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./about.html"><i class="fa-solid fa-arrow-right"></i>About
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="fourth">
+                <div class="sumary_services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-right"></i>Get Help
+                            </a>
+                            <p>
+                                Anonymously get advice from experienced Counsellor on relationships, lifestyle, and
+                                managing life's challenges.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-right"></i>Advertise
+                            </a>
+                            <p>
+                                Advertise with ZedStories
+
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subscribe">
+                    <form action="#" method="post">
+                        <input type="email" name="email" id="email" placeholder="Enter email address" required>
+                        <button>Subscribe for notifications</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="all_rights">
+
+            <p class="desktop_view">
+                Copyright ©2024 All rights reserved
+            <p id="tab_break">
+                | This template is developed By |
+            <p class="phone_break">
+                Fiero Technologies
+            </p>
+            </p>
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- bootsrtap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/animate.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
+
+</html>

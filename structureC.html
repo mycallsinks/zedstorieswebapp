@@ -1,0 +1,45 @@
+<div class="row g-0">
+    <div class="col-md-5 normal_poster p-0">
+        <img src="./images/one.jpg" class="img-fluid" alt="...">
+        <p class="post_category_tittle">category here</p>
+    </div>
+    <div class="col-md-7 m-0">
+        <div class="card-body post_details ps-1 p-0 pe-1">
+            <!-- tittle  -->
+            <h5 class="card-title second_section_post_tittle">post tittle here
+            </h5>
+            <!-- paragrapgh -->
+
+            <div class="post_para_details">
+                <p class="card-text second_section_post_text m-0">
+                    post text here
+                    <p class="location">
+                        post location here
+                    </p>
+                </p>
+                <div class="authors_details mb-2">
+                    <p class="card-text post_author m-0">
+                        <small>author here</small>
+                    </p>
+                    <p class="card-text post_date">
+                        <small>date here</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+    <h2>Confessions</h2>
+    <ul>
+        <c:forEach var="post" items="${confessions}">
+            <li>
+                <h3>${post.title}</h3>
+                <p>Author: ${post.author}</p>
+                <p>Location: ${post.location}</p>
+                <p>${post.text}</p>
+                <!-- Add more details as needed -->
+            </li>
+        </c:forEach>
+    </ul>

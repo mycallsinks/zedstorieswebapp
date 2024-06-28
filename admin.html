@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zed Stories Homepage</title>
+    <!-- boostrap css link -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animations.css">
+
+    <!-- fonts icons start-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://kit.fontawesome.com/018d9ba538.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-body-tertiary">
+    <div class="zed_sotories_holder">
+        <header class="header_holder">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-md bg-body-tertiary">
+                <div class="container-fluid pe-2 ps-2">
+                    <a class="navbar-brand logo_name" href="#">
+                        <span class="logo_surname initial_logo_name">Zed</span><span
+                            class="logo_surname text-primary">Stories</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse navbar_lists" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./conffessions.html">Confessions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./lifestyle.html">Lifestyle</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./partner.html">Partner</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./makeapost.html">Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./counsel.html">Counsel </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./about.html">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <section class="body_holder">
+            <!-- admin panel section -->
+
+            <div class="container mt-5">
+                <h1 class="text-center">Admin Panel</h1>
+        
+                <!-- Confessions Section -->
+                <div class="my-4">
+                    <h2>Confessons</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Location</th>
+                                <th>Text</th>
+                                <th>Image</th>
+                                <th>Contact Details</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="confessionsTableBody">
+                            <!-- Confessions posts will be inserted here -->
+                            <tr>
+                                <td>Confession Title 1</td>
+                                <td>Author 1</td>
+                                <td>Location 1</td>
+                                <td>Confession text 1</td>
+                                <td></td>
+                                <td></td>
+                                <td>Pending</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" onclick="approvePost(1)">Approve</button>
+                                    <button class="btn btn-primary btn-sm" onclick="editPost(1)">Edit</button>
+                                    <button class="btn btn-danger btn-sm" onclick="deletePost(1)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody id="confessionsTableBody">
+                            <!-- Confessions posts will be inserted here -->
+                            <tr>
+                                <td>Confession Title 1</td>
+                                <td>Author 1</td>
+                                <td>Location 1</td>
+                                <td>Confession text 1</td>
+                                <td></td>
+                                <td></td>
+                                <td>Pending</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" onclick="approvePost(1)">Approve</button>
+                                    <button class="btn btn-primary btn-sm" onclick="editPost(1)">Edit</button>
+                                    <button class="btn btn-danger btn-sm" onclick="deletePost(1)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <!-- Partner Section -->
+                <div class="my-4">
+                    <h2>Partner</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Location</th>
+                                <th>Text</th>
+                                <th>Image</th>
+                                <th>Contact Details</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="partnerTableBody">
+                            <!-- Partner posts will be inserted here -->
+                            <tr>
+                                <td>Partner Title 2</td>
+                                <td>Author 2</td>
+                                <td>Location 2</td>
+                                <td>Partner text 2</td>
+                                <td></td>
+                                <td>Contact details 2</td>
+                                <td>Approved</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" onclick="editPost(2)">Edit</button>
+                                    <button class="btn btn-danger btn-sm" onclick="deletePost(2)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody id="partnerTableBody">
+                            <!-- Partner posts will be inserted here -->
+                            <tr>
+                                <td>Partner Title 2</td>
+                                <td>Author 2</td>
+                                <td>Location 2</td>
+                                <td>Partner text 2</td>
+                                <td></td>
+                                <td>Contact details 2</td>
+                                <td>Approved</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" onclick="editPost(2)">Edit</button>
+                                    <button class="btn btn-danger btn-sm" onclick="deletePost(2)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <!-- Lifestyle Section -->
+                <div class="my-4">
+                    <h2>Lifestyle</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Location</th>
+                                <th>Text</th>
+                                <th>Image</th>
+                                <th>Contact Details</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lifestyleTableBody">
+                            <!-- Lifestyle posts will be inserted here -->
+                            <tr>
+                                <td>Lifestyle Title 3</td>
+                                <td>Author 3</td>
+                                <td>Location 3</td>
+                                <td>Lifestyle text 3</td>
+                                <td><img src="./images/one.jpg" style="max-width: 100px;"></td>
+                                <td></td>
+                                <td>Pending</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" onclick="approvePost(3)">Approve</button>
+                                    <button class="btn btn-primary btn-sm" onclick="editPost(3)">Edit</button>
+                                    <button class="btn btn-danger btn-sm" onclick="deletePost(3)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody id="lifestyleTableBody">
+                            <!-- Lifestyle posts will be inserted here -->
+                            <tr>
+                                <td>Lifestyle Title 3</td>
+                                <td>Author 3</td>
+                                <td>Location 3</td>
+                                <td>Lifestyle text 3</td>
+                                <td><img src="image3.jpg" style="max-width: 100px;"></td>
+                                <td></td>
+                                <td>Pending</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" onclick="approvePost(3)">Approve</button>
+                                    <button class="btn btn-primary btn-sm" onclick="editPost(3)">Edit</button>
+                                    <button class="btn btn-danger btn-sm" onclick="deletePost(3)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+            <!-- Modal for editing post -->
+            <div class="modal fade" id="editPostModal" tabindex="-1" aria-labelledby="editPostModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editPostModalLabel">Edit Post</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editPostForm" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="editPostCategory">Category</label>
+                                    <select class="form-control" id="editPostCategory">
+                                        <option value="CONFESSIONS">Confessions</option>
+                                        <option value="PARTNER">Partner</option>
+                                        <option value="LIFESTYLE">Lifestyle</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPostTitle">Title</label>
+                                    <input type="text" class="form-control" id="editPostTitle">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPostAuthor">Author</label>
+                                    <input type="text" class="form-control" id="editPostAuthor">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPostLocation">Location</label>
+                                    <input type="text" class="form-control" id="editPostLocation">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPostText">Text</label>
+                                    <textarea class="form-control" id="editPostText"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPostImage">Current Image</label>
+                                    <br>
+                                    <img src="" id="currentPostImage" alt="Current Image" style="max-width: 100%;">
+                                    <br><br>
+                                    <input type="file" class="form-control-file" id="editPostImage">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPostContactDetails">Contact Details</label>
+                                    <input type="text" class="form-control" id="editPostContactDetails">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editPostStatus">Status</label>
+                                    <select class="form-control" id="editPostStatus">
+                                        <option value="Pending">Pending</option>
+                                        <option value="Approved">Approved</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-primary" id="savePostButton">Save changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- admin panel end -->
+        </section>
+    </div>
+    <!-- footer -->
+    <!-- footer -->
+    <footer class="footer body_sections">
+
+        <div class="footer_wrapper">
+            <div class="first">
+                <div class="logo">
+                    <h1 class="doc_logo">
+                        <!-- Dr.<span id="special">Fiero</span> -->
+                        <a class="navbar-brand logo_name" href="#">
+                            <span class="logo_surname initial_logo_name">Zed</span><span
+                                class="logo_surname text-primary">Stories</span>
+                        </a>
+                    </h1>
+                    <p>Anonymously write confessions, find a partner, and encourage someone about life.</p>
+                </div>
+
+                <div class="have_questions">
+                    <h3>Have Questions?</h3>
+                    <ul>
+
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            +260 974286888
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/message/WSQ463DN4ZDRK1" target="_blank">Whatsapp </a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i>
+                            <a href="https://www.michaelsinkamba.com">michaelsinkamba.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <div class="second">
+                <div class="links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li>
+                            <a href="./index.html">
+                                <i class="fa-solid fa-arrow-right">
+                                </i> Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./about.html"><i class="fa-solid fa-arrow-right"></i>About
+                            </a>
+                        <li>
+                            <a href="./conffessions.html"><i class="fa-solid fa-arrow-right"></i>Confessions
+                            </a>
+                        <li>
+                            <a href="./lifestyle.html"><i class="fa-solid fa-arrow-right"></i>Lifestyle
+                            </a>
+                        <li>
+                            <a href="./findapartner.html"><i class="fa-solid fa-arrow-right"></i>Partner
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./counsel.html"><i class="fa-solid fa-arrow-right"></i>Counsel
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./about.html"><i class="fa-solid fa-arrow-right"></i>About
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="fourth">
+                <div class="sumary_services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-right"></i>Get Help
+                            </a>
+                            <p>
+                                Anonymously get advice from experienced Counsellor on relationships, lifestyle, and
+                                managing life's challenges.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-right"></i>Advertise
+                            </a>
+                            <p>
+                                Advertise with ZedStories
+
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subscribe">
+                    <form action="#" method="post">
+                        <input type="email" name="email" id="email" placeholder="Enter email address" required>
+                        <button>Subscribe for notifications</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="all_rights">
+
+            <p class="desktop_view">
+                Copyright ©2024 All rights reserved
+            <p id="tab_break">
+                | This template is developed By |
+            <p class="phone_break">
+                Fiero Technologies
+            </p>
+            </p>
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- external js sheet -->
+    <script src="./js/script.js"></script>
+    <script src="./js/animate.js"></script>
+    <script src="./js/admin.js"></script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

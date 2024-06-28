@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style-type: none !important;
+  }
+  
+  
+  :root {
+    --primary-bg-color: #141313;
+    --secondary-bg-color: #4390f5;
+    --orther-bg-color: #1066d7;
+  
+    --primary-text-color: #343a40;
+    --secondary-text-color: #6c757d;
+    --tittle-text-color: #ff8000;
+    --orther-text-color: #4390f5;
+    --text-on-bg-color: #fff;
+  
+    --overlay-bg-color: rgba(0, 0, 0, 0.4);
+  
+  }
+
+/* Basic styling for demonstration */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 5px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.table-responsive .actions {
+  display: flex !important;
+    flex-direction: row;
+    gap: 5px;
+ 
+}
+.table_rows td {
+    max-height: 50px; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.table-responsive {
+    margin-top: -20px !important;
+    margin-bottom: 30px;
+}
+.table-responsive .actions form{
+    display: flex !important;
+    gap: 5px;
+}
+
+.container h2{
+    color: var(--secondary-bg-color);
+    font-size: 1.5rem;
+}
+
+.container h1 a span{
+    font-size: 2.4rem;
+}
+
+
+.container h1{
+    font-weight: bold;
+}
+
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content h2{
+    color: #4390f5;
+    font-weight: bold;
+}
+.modal-content form{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--tittle-text-color);
+}
+
+
+.modal-content form input{
+    height: 50px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.modal-content .saveBTN{
+    margin: 5px 0;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-on-bg-color);
+}
