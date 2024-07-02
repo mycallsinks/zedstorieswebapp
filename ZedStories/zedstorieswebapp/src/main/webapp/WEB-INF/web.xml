@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Define the web application with the Jakarta EE schema -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+  <display-name>zedstorieswebapp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+  <servlet>
+    <description></description>
+    <display-name>AddAdServlet</display-name>
+    <servlet-name>AddAdServlet</servlet-name>
+    <servlet-class>com.michaelsinkamba.servlets.AddAdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddAdServlet</servlet-name>
+    <url-pattern>/AddAdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminDeleteAdServlet</display-name>
+    <servlet-name>AdminDeleteAdServlet</servlet-name>
+    <servlet-class>com.michaelsinkamba.servlets.AdminDeleteAdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDeleteAdServlet</servlet-name>
+    <url-pattern>/AdminDeleteAdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManageUsersServlet</display-name>
+    <servlet-name>ManageUsersServlet</servlet-name>
+    <servlet-class>com.michaelsinkamba.servlets.ManageUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageUsersServlet</servlet-name>
+    <url-pattern>/ManageUsersServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
